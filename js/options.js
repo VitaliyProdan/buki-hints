@@ -1,6 +1,9 @@
 // if(typeof jQuery == 'undefined'){
 //     document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
 // }
+// if(typeof jQuery == 'undefined'){
+//     document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+// }
 function runWithJQuery(jQueryCode) {
     if (window.jQuery) jQueryCode();
     else {
@@ -44,7 +47,7 @@ runWithJQuery(function jQueryCode() {
                 .after("<select style='width: 100%; margin-bottom: 20px;' class='js-hints'> " + options_oplata + " </select>");
 
             jQuery('select.js-hints').on('click', function(e) {
-                jQuery('.chat-field-user').val(jQuery("option:selected", this).val());
+                jQuery('.chat-field-user').val(jQuery("option:selected", this).text().trim());
             });
 
         }, 5000);
